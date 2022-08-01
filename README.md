@@ -2,7 +2,7 @@
 Standard tools as well as multi-device implementation
 
 MFRC522 is a library developed for communication with 13.56MHz RFID tags/devices using tag readers equipped with the MFRC522 chipset.  My contribution/alteration to this existing library is as follows:
-- Allow multi-device SPI communication, effectively expanding maximum devices to 11
+- Allow multi-device SPI communication, effectively expanding maximum devices from 2 to 11
   - This is accomplished by disabling the chip enable/chip select and replacing it with a GPIO that will mimic its behavior
 
 To mimic its behavior, a number of things have to be altered within the MFRC522 library.  First, the max speed is manually set to 10 MHz, then the chip select pin is passed via the SimpleMFRC522 object in the script invoking the MFRC522 library by way of a standard set/get pair.  That CS pin is then initialized and asserted high to begin acting like the active low CS pin originally in its place.  During communication, that GPIO's output will be asserted low then back high again to signal its end before having the SPI channel closed and the GPIO cleaned up to complete its tour of duty.
