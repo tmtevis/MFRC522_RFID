@@ -13,21 +13,18 @@ How to use this addition on your Raspberry Pi:
 - Replace the original MFRC522.py and SimpleMFRC522.py with MFRC522_Multi-Reader.py and SimpleMFRC522_Multi-Reader.py and rename them to the originals
 - Follow the pinout scheme below for your device:
 
-  For Standard MFRC522-based 13.56MHz SPI Devices:
-# RFID Reader/Writer Wiring Configuration:
-# ########################################
-# PIN	    GPIO
-# ##########
-# 3.3V	  17
-# MOSI	  19
-# MISO	  21
-# RST	    22
-# SCK	    23
-# GND	    25
+For Standard MFRC522-based 13.56MHz SPI Devices:
+RFID Reader/Writer Wiring Configuration:
+PIN	   GPIO
+##########
+3.3V	  17
+MOSI	  19
+MISO	  21
+RST	    22
+SCK	    23
+GND	    25
 
-# 11 Available CS GPIO Pins:
-# [11, 13, 15, 16, 18, 29, 31, 32, 33, 36, 37]
-
+11 Available CS GPIO Pins: [11, 13, 15, 16, 18, 29, 31, 32, 33, 36, 37]
 
 To use this in your program, include the following information in your header:
 
